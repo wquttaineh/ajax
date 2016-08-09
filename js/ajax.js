@@ -5,9 +5,9 @@ $(document).ready(function(){
 
 	for (var i = 0; i < buttonsArray.length; i++) {
 	var button = $('<button/>').html(buttonsArray[i]).appendTo($('#animalButtons'));
-	// $('#animalButtons').append(button);
+
 	}
-		$('button').on('click', function(){
+		$(document.body).on('click', 'button', function(){
 			$('#animals').empty();
 			var whatWillShow = $(this).html().trim();
 			console.log("Button Click Function: " + $(this));
@@ -31,18 +31,16 @@ $(document).ready(function(){
 				});	
 		});
 
-		for (var i = 0; i < buttonsArray.length; i++) {
-			var buttonVal = $('<button>').val()
-		}
+		// for (var i = 0; i < buttonsArray.length; i++) {
+			
+		// }
 		// On click function for my input text box
 		$(document.body).on('click', '.addButton', function(){
-			// buttonVal.empty();
-			// var buttonVal = $('<button>').val().html();
-			$('#inputBox').append(buttonVal);
-			var word = buttonVal;
+			var buttonVal = $('#inputBox').val()
+			$('#inputBox').val("")
 			buttonsArray.push(buttonVal);
-			
-			// $('#inputBox').append(word);
+			$('#inputBox').append(buttonVal);
+			var button = $('<button/>').html(buttonVal).appendTo($('#animalButtons'));
 			console.log(buttonVal);
 			console.log(buttonsArray)
 			return false;
